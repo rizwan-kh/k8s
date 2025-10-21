@@ -1,0 +1,26 @@
+cluster:
+  type: ops
+  name: ops-01
+  environment: operations
+
+thanos:
+  gcsSecret: ""
+  archive_bucket: ops-01-metrics-archive
+  globalQuery:
+    enabled: true
+    clientTls:
+      ca_crt: ""
+      tls_crt: ""
+      tls_key: ""
+  query:
+    enabled: true
+    scrape:
+      grpcRoute:
+        enabled: false
+
+elasticExporter:
+  enabled: true
+  es:
+    uri: "" # Sealed ES URI
+    host: logging-es-http.logging
+    port: "9200"

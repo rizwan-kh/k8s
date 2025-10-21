@@ -1,0 +1,11 @@
+cluster:
+  type: stag
+  name: stag-01
+  environment: staging
+
+grafana:
+  enabled: false
+
+thanos:
+  gcsSecret: ""
+  archive_bucket: stag-01-metrics-archive
